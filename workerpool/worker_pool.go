@@ -17,7 +17,7 @@ type WorkerPool struct {
 	Mod       int
 }
 
-func NewWorkerPool(maxQueNum, avgWorker, maxQueLen int, tasker Tasker, mod int) *WorkerPool {
+func New(maxQueNum, avgWorker, maxQueLen int, tasker Tasker, mod int) *WorkerPool {
 	return &WorkerPool{
 		MaxQueNum: maxQueNum,
 		AvgWorker: avgWorker,

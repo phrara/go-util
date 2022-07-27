@@ -17,6 +17,14 @@ type Packet struct {
 	Value []byte
 }
 
+func New(tag uint32, value []byte) *Packet {
+	return &Packet{
+		Tag:   tag,
+		Len:   uint32(len(value)),
+		Value: value,
+	}
+}
+
 func (p *Packet) Load(reader io.Reader) error {
 	header := make([]byte, HEADER)
 	_, err := io.ReadFull(reader, header)
